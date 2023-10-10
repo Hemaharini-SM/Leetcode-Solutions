@@ -1,1 +1,25 @@
+Here the mistake I did was , I used list instead of set , and it increased the time for running every testcases 
+
+class Solution {
+    public String kthDistinct(String[] arr, int k) {
+        HashSet<String> set1 = new HashSet<>();
+        HashSet<String> set2 = new HashSet<>();
+        int count=0;
+        for(String i:arr){
+            if(set1.contains(i))set2.add(i);
+            else set1.add(i);
+        }
+        for(String i:arr){
+            if(!set2.contains(i)){
+                count++;
+            }
+            if(count==k) return i;
+        }
+        return "";
+        }
+        
+        
+}
+
+
 
